@@ -71,7 +71,8 @@ namespace NLog.Internal
 
             return TryParseEnum_net3(value, ignoreCase, out result);
 #else
-            return Enum.TryParse(value, ignoreCase, out result);
+            //todo: Internal/EnumHelpers.cs(74,25): error CS0117: `System.Enum' does not contain a definition for `TryParse'
+            return TryParseEnum_net3(value, ignoreCase, out result);
 #endif
 
 
